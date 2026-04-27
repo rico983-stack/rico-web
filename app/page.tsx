@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   ArrowRight, TrendingUp, Search, MousePointerClick, Palette,
@@ -143,20 +142,17 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative hidden lg:flex justify-center items-end"
+              className="relative hidden lg:flex justify-center items-end min-h-[520px]"
             >
               {/* Glow behind photo */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px] rounded-full bg-gradient-to-t from-[#C084FC] via-[#818CF8] to-transparent opacity-20 blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[380px] h-[380px] rounded-full bg-gradient-to-t from-[#C084FC] via-[#818CF8] to-transparent opacity-20 blur-3xl pointer-events-none" />
 
               {/* Photo */}
-              <div className="relative z-10">
-                <Image
+              <div className="relative z-10 w-full flex justify-center">
+                <img
                   src="/me.png"
                   alt="Rico Lin"
-                  width={480}
-                  height={640}
-                  className="object-contain object-bottom max-h-[580px] w-auto drop-shadow-2xl"
-                  priority
+                  className="max-h-[560px] w-auto object-contain object-bottom drop-shadow-2xl"
                 />
               </div>
             </motion.div>
