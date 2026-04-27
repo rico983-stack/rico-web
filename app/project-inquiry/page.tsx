@@ -1,125 +1,100 @@
 'use client'
-import { CheckCircle, Users, Clock, ArrowRight } from 'lucide-react'
-import SectionTitle from '@/components/SectionTitle'
+import { CheckCircle, Clock, MessageCircle, ArrowRight } from 'lucide-react'
 import AnimatedCard from '@/components/AnimatedCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import ProjectInquiryForm from '@/components/ProjectInquiryForm'
 
-const services = [
-  { emoji: '🎨', name: 'Logo 設計', desc: '品牌識別設計，建立獨特形象' },
-  { emoji: '📄', name: 'DM / 海報設計', desc: '促銷文宣、活動宣傳印刷品' },
-  { emoji: '📦', name: '包裝 / 名片設計', desc: '產品包裝視覺與名片設計' },
-  { emoji: '🌐', name: 'WordPress 網站', desc: '企業官網、品牌網站架設' },
-  { emoji: '📈', name: 'Google Ads', desc: 'B2B / B2C 搜尋廣告投放' },
-  { emoji: '🔍', name: 'SEO 文章撰寫', desc: '關鍵字佈局與內容行銷' },
-  { emoji: '💬', name: 'LINE 官方帳號', desc: '帳號設置與圖文選單設計' },
-  { emoji: '📌', name: '貼紙設計', desc: '各式貼紙、包裝貼紙設計' },
-]
-
-const targets = [
-  '想要建立或重塑品牌形象的創業者',
-  '需要設計支援但沒有設計師的小型企業',
-  '想自己操盤廣告但缺乏策略的品牌',
-  '需要提升網站流量或 SEO 成效的企業',
-  '剛起步、需要完整品牌物料的新品牌',
+const whyMe = [
+  '15 年跨領域執行經驗，不只出策略，能親自執行',
+  '自行操作七位數廣告預算，了解 B2B 市場節奏',
+  'SEO + 廣告 + 網站三位一體，不需要再協調多個外包',
+  '長期合作為主，不是做完就走',
+  '定期報告 + 數據追蹤，成效透明',
 ]
 
 const process = [
-  { step: '01', title: '填寫需求', desc: '透過表單說明您的需求、預算與時程，越詳細越好。' },
-  { step: '02', title: '初步了解', desc: '我會在 1-2 個工作天內與您聯絡，進一步了解需求。' },
-  { step: '03', title: '提供建議或報價', desc: '根據您的需求，提供合適的執行方案與報價說明。' },
-  { step: '04', title: '確認合作與排程', desc: '雙方確認後，簽訂合作說明並安排執行時程。' },
-  { step: '05', title: '開始執行', desc: '進入設計或行銷的執行階段，定期更新進度。' },
+  { step: '01', title: '填寫需求', desc: '說明你的目標、現況與大概預算，越詳細越好。' },
+  { step: '02', title: '免費諮詢', desc: '我會在 24 小時內聯絡，安排 30 分鐘線上或電話討論。' },
+  { step: '03', title: '提供方案', desc: '根據你的狀況，提供最適合的服務範圍與月費報價。' },
+  { step: '04', title: '確認合作', desc: '雙方確認後，制定執行計畫，正式啟動。' },
+  { step: '05', title: '持續執行', desc: '按月執行、定期報告，數據持續優化。' },
 ]
 
 export default function ProjectInquiryPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
-        <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-gradient-to-bl from-[#7C3AED] to-[#93C5FD] opacity-[0.08] blur-[80px] pointer-events-none" />
+      <section className="relative overflow-hidden gradient-bg py-20 lg:py-28">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-white opacity-[0.05] blur-[80px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-purple-50 text-brand-purple">
-              Collaboration
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-white/20 text-white">
+              Start Here
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">合作需求</span>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              開始合作
             </h1>
-            <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-              告訴我你的挑戰，讓我們一起找到最適合的方案。從設計到行銷，一人可以搞定的事，就不需要複雜的流程。
+            <p className="text-white/75 text-lg max-w-xl leading-relaxed mb-7">
+              告訴我你的目標。不管是 SEO、廣告投放、還是網站優化，我幫你找到最有效的切入點。
             </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://lin.ee/Th8VXd1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-purple font-bold rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm"
+              >
+                <MessageCircle size={15} />
+                先加 LINE 聊聊
+              </a>
+              <a
+                href="mailto:reihoo75@gmail.com"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-full hover:border-white hover:bg-white/10 transition-all text-sm"
+              >
+                寄 Email
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="bg-surface py-14 lg:py-18">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionTitle title="我可以協助的項目" tag="Services" />
-          </ScrollReveal>
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {services.map((s, i) => (
-              <AnimatedCard key={i} delay={i * 0.05} hoverLift>
-                <div className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow h-full">
-                  <div className="text-2xl mb-3">{s.emoji}</div>
-                  <div className="font-semibold text-gray-900 text-sm mb-1">{s.name}</div>
-                  <div className="text-gray-500 text-xs leading-relaxed">{s.desc}</div>
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Target clients + Process */}
-      <section className="py-14 lg:py-18 bg-white">
+      {/* Why me + Process */}
+      <section className="py-14 lg:py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-            {/* Target clients */}
+            {/* Why me */}
             <ScrollReveal direction="left">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white">
-                    <Users size={18} />
-                  </div>
-                  <h2 className="font-heading font-bold text-xl text-gray-900">適合合作的對象</h2>
-                </div>
-                <div className="space-y-3">
-                  {targets.map((target, i) => (
-                    <div key={i} className="flex items-start gap-3 p-4 bg-surface rounded-xl">
-                      <CheckCircle size={16} className="text-brand-purple mt-0.5 shrink-0" />
-                      <span className="text-gray-700 text-sm leading-relaxed">{target}</span>
-                    </div>
+              <div className="bg-white rounded-3xl p-8 shadow-sm h-full">
+                <h2 className="font-heading font-bold text-xl text-gray-900 mb-5">為什麼找我？</h2>
+                <ul className="space-y-3">
+                  {whyMe.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 p-3.5 rounded-xl bg-surface">
+                      <CheckCircle size={15} className="text-brand-purple mt-0.5 shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </ScrollReveal>
 
             {/* Process */}
             <ScrollReveal direction="right">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white">
-                    <Clock size={18} />
-                  </div>
+              <div className="bg-white rounded-3xl p-8 shadow-sm h-full">
+                <div className="flex items-center gap-3 mb-5">
+                  <Clock size={20} className="text-brand-purple" />
                   <h2 className="font-heading font-bold text-xl text-gray-900">合作流程</h2>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {process.map((p, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-9 h-9 rounded-full gradient-bg-soft flex items-center justify-center text-white text-xs font-bold shrink-0">
+                      <div className="w-8 h-8 rounded-full gradient-bg-soft flex items-center justify-center text-white text-xs font-bold shrink-0">
                         {p.step}
                       </div>
-                      <div className="pt-1.5">
+                      <div className="pt-1">
                         <div className="font-semibold text-gray-900 text-sm">{p.title}</div>
                         <div className="text-gray-500 text-xs mt-0.5 leading-relaxed">{p.desc}</div>
                       </div>
-                      {i < process.length - 1 && (
-                        <ArrowRight size={14} className="text-gray-300 mt-2.5 ml-auto shrink-0 hidden sm:block" />
-                      )}
                     </div>
                   ))}
                 </div>
@@ -130,18 +105,34 @@ export default function ProjectInquiryPage() {
       </section>
 
       {/* Form */}
-      <section className="py-14 lg:py-20 bg-surface">
+      <section className="py-14 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="bg-white rounded-3xl shadow-sm p-8 sm:p-10">
-              <div className="mb-8">
-                <SectionTitle
-                  title="填寫合作需求"
-                  subtitle="填寫後我會在 1–2 個工作天內與您聯絡"
-                  tag="Inquiry Form"
-                />
-              </div>
+            <div className="text-center mb-8">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                填寫合作需求
+              </h2>
+              <p className="text-gray-500">送出後我會在 24 小時內回覆。不確定需求？直接加 LINE 聊聊也可以。</p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="bg-surface rounded-3xl p-7 sm:p-10">
               <ProjectInquiryForm />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-500">
+              <span>或直接聯絡：</span>
+              <a href="https://lin.ee/Th8VXd1" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-brand-purple font-semibold hover:underline">
+                <MessageCircle size={14} /> LINE：@Th8VXd1
+              </a>
+              <a href="mailto:reihoo75@gmail.com"
+                className="inline-flex items-center gap-1.5 text-brand-purple font-semibold hover:underline">
+                <ArrowRight size={14} /> reihoo75@gmail.com
+              </a>
             </div>
           </ScrollReveal>
         </div>

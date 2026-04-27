@@ -3,20 +3,21 @@ import { Mail, MessageCircle, Globe, Sparkles } from 'lucide-react'
 
 const footerLinks = [
   {
-    title: '了解更多',
+    title: '服務',
     links: [
-      { href: '/skills', label: '能力與技能' },
-      { href: '/experience', label: '職涯與實戰' },
-      { href: '/life', label: '人生與體驗' },
-      { href: '/lifestyle', label: '興趣與生活' },
+      { href: '/services', label: '服務方案' },
+      { href: '/project-inquiry', label: '開始合作' },
+      { href: '/experience', label: '成果案例' },
+      { href: '/healing-booking', label: '療癒預約' },
     ],
   },
   {
-    title: '服務合作',
+    title: '關於',
     links: [
-      { href: '/project-inquiry', label: '合作需求' },
-      { href: '/healing-booking', label: '療癒預約' },
+      { href: '/about', label: '關於我' },
       { href: '/contact', label: '聯絡我' },
+      { href: '/skills', label: '能力與技能' },
+      { href: '/lifestyle', label: '興趣與生活' },
     ],
   },
 ]
@@ -35,20 +36,23 @@ export default function Footer() {
               </span>
               <span className="font-heading font-bold text-lg gradient-text">Rico Lin</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xs">
-              品牌設計師 × 數位行銷人 × 療癒師<br />
-              結合美感與策略，讓品牌被看見、被理解、被信任。
+            <p className="text-gray-400 text-sm leading-relaxed mb-2 max-w-xs">
+              行銷導向的個人品牌接案者
+            </p>
+            <p className="text-gray-500 text-xs leading-relaxed mb-5 max-w-xs">
+              專注 SEO · Google Ads · 網站轉換設計<br />
+              幫創業者打造能帶來客戶的行銷系統
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="mailto:your@email.com"
+                href="mailto:reihoo75@gmail.com"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Email"
               >
                 <Mail size={15} />
               </a>
               <a
-                href="https://line.me/ti/p/~your_line_id"
+                href="https://lin.ee/Th8VXd1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -57,7 +61,7 @@ export default function Footer() {
                 <MessageCircle size={15} />
               </a>
               <a
-                href="https://linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/rico1986/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -90,12 +94,13 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Bottom */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} Rico Lin. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
-            品牌設計 · 數位行銷 · 頌缽療癒 · 台北
+            SEO · Google Ads · 網站轉換 · 頌缽療癒 · 台北
           </p>
         </div>
       </div>

@@ -1,182 +1,90 @@
 'use client'
-import SectionTitle from '@/components/SectionTitle'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle, TrendingUp, Globe, BarChart2, ShoppingCart } from 'lucide-react'
 import AnimatedCard from '@/components/AnimatedCard'
 import ScrollReveal from '@/components/ScrollReveal'
-import { TrendingUp, Globe, Megaphone, ShoppingCart, Play, Users, BarChart2 } from 'lucide-react'
+import PageCTA from '@/components/PageCTA'
 
-const timeline = [
+const bigNumbers = [
+  { value: '850%', label: '年度網站流量提升', sub: 'SEO + GEO 優化', color: 'gradient-text' },
+  { value: '60+', label: '海外市場詢問增加', sub: '多語系廣告 + SEO', color: 'gradient-text' },
+  { value: '13.84%', label: 'Google Ads CTR', sub: '台灣 B2B 搜尋廣告', color: 'gradient-text' },
+  { value: '56.61%', label: '廣告轉換率', sub: '台灣 B2B 市場', color: 'gradient-text' },
+  { value: '7位數', label: '年度廣告預算', sub: '自行操作，省 20% 代操費', color: 'gradient-text' },
+  { value: '3國', label: '商標權保護', sub: '台灣 · 美國 · 中國', color: 'gradient-text' },
+]
+
+const cases = [
   {
-    period: '早期 · 教學與行政',
-    icon: <Play size={16} />,
-    items: [
-      {
-        title: '微軟軟體教學講師',
-        tags: ['教學', '培訓'],
-        points: [
-          '對象為大學教師，協助推廣微軟辦公套件應用',
-          '學習行政工作流程，培養跨部門溝通能力',
-          '錄製影音教學課程，建立線上學習資源',
-          '動態網站建立與維護',
-        ],
-      },
-      {
-        title: '補習班輔導老師',
-        tags: ['教育', '管理'],
-        points: [
-          '國小三年級課業輔導，管理 30 位學生的學習進度',
-          '培養課堂管理、親師溝通與耐心應對能力',
-        ],
-      },
+    icon: <TrendingUp size={22} />,
+    tag: 'SEO / GEO',
+    problem: '網站流量幾乎掛零，客戶根本找不到你。',
+    approach: [
+      '從零規劃網站技術架構（WordPress）',
+      '開放 AI 搜尋架構（GEO），測試六大 AI 平台推薦結果',
+      '關鍵字佈局產品類別，撰寫針對高詢問產品的文章',
+      '每項產品頁面撰寫獨立 Title、Description、結構化資料',
+      '安裝效能優化、多語系、結構化資料外掛',
     ],
+    result: '年度網站流量提升 850%，開始出現 AI 搜尋推薦結果',
+    metric: '+850% 流量',
+    color: 'from-[#C084FC] to-[#818CF8]',
   },
   {
-    period: '設計與內容製作',
-    icon: <Globe size={16} />,
-    items: [
-      {
-        title: '珠寶製造商 · 行銷美編',
-        tags: ['平面設計', '電商', '攝影'],
-        points: [
-          '平面設計：燈箱廣告、人形立牌、DM、手冊、海報、布條',
-          '產品拍攝與修圖，維護官方網站',
-          'PChome 電商平台經營，FB 粉絲專頁內容管理',
-        ],
-      },
-      {
-        title: '傳播公司 · 剪輯員',
-        tags: ['影音剪輯', '後製'],
-        points: [
-          '公關活動影片、企業形象影片、觀光導覽影片剪輯',
-          '產品發布會剪輯，片頭片尾設計',
-          '配音、旁白音、字幕製作',
-          '大型花燈製作協作',
-        ],
-      },
-      {
-        title: '淨水過濾器代理商 · 美編',
-        tags: ['設計', '包裝'],
-        points: [
-          '產品拍攝與 DM 製作',
-          '化妝品包裝設計與生產製作',
-          '網站管理更新，產品說明書製作',
-        ],
-      },
+    icon: <BarChart2 size={22} />,
+    tag: 'Google Ads',
+    problem: '廣告代操公司每年收 20%+ 費用，但成效不透明。',
+    approach: [
+      '接手廣告帳戶，自行操作七位數廣告預算',
+      '重新規劃關鍵字架構、廣告群組與出價策略',
+      '台灣市場：Search 廣告 CTR 13.84%，轉換率 56.61%',
+      '美國市場：CTR 4.64%，轉換率 25%',
+      'LinkedIn 廣告測試，CTR 1.24%',
+      '日文、英文跨國廣告投放（與外貿協會合作）',
     ],
+    result: '每年省下 20% 代操費，數據更透明，詢問更穩定',
+    metric: '省 20% + CTR 13.84%',
+    color: 'from-[#818CF8] to-[#93C5FD]',
   },
   {
-    period: '傳統製造業 · 行銷管理',
-    icon: <Megaphone size={16} />,
-    items: [
-      {
-        title: '行銷專案管理',
-        tags: ['專案管理', '海外行銷'],
-        points: [
-          '2025 年操作 5 大行銷專案',
-          '與經濟部外貿協會合作，投放日文、英文關鍵字廣告',
-          '海外市場詢問信增加 60+ 筆',
-          '與影片團隊拍攝形象影片並投放 YouTube 廣告',
-          '越南市場開發及國際醫療展參展，AI 影音製作',
-          '管理海外市場開發專案全流程',
-        ],
-      },
+    icon: <Globe size={22} />,
+    tag: '海外市場開拓',
+    problem: '只有台灣市場，想打進日本、美國、東南亞。',
+    approach: [
+      '台灣經貿網建立產品資訊，增加 14 個語系版本',
+      '建立虛擬展間，參與線上採購洽談會',
+      '日英語關鍵字廣告投放（外貿協會合作專案）',
+      'Amazon 北美站從零建立，產品上架優化',
+      '越南市場開發，參展國際醫療展',
+      'AI 影音製作，YouTube 廣告觸及海外廠商',
     ],
+    result: '海外市場詢問信增加 60+ 筆，建立多個海外銷售渠道',
+    metric: '+60 詢問 · 14 語系',
+    color: 'from-[#93C5FD] to-[#C084FC]',
   },
   {
-    period: 'SEO / GEO · 自然流量',
-    icon: <TrendingUp size={16} />,
-    items: [
-      {
-        title: 'SEO 與 GEO 全面優化',
-        tags: ['SEO', 'GEO', '技術優化'],
-        highlight: '年度流量提升 850%',
-        points: [
-          '從零規劃網站架構，技術面與 AI 優先策略',
-          '測試 Gemini、ChatGPT、Perplexity、Claude、Grok、Copilot 關鍵字推薦',
-          '頁面加入 CTA 設計，優化使用者轉換路徑',
-          '安裝效能優化外掛、多語系轉換外掛、結構化資料',
-          '關鍵字架構佈局產品類別，各產品撰寫獨立 Title、Description',
-          '針對高詢問度產品與客戶案例建立文章，監測 GA4、GTM、GSC 數據',
-        ],
-      },
+    icon: <ShoppingCart size={22} />,
+    tag: '電商 & 多平台',
+    problem: '只有實體銷售，想打開線上通路但不知從哪開始。',
+    approach: [
+      'PChome、Yahoo 商城、蝦皮、91APP、Shopline 多平台建立',
+      'Amazon 北美站產品頁面 SEO 優化',
+      '建立台灣經貿網 B2B 採購資訊',
+      '電子化邀請卡與 QR Code 電子型錄',
+      '展覽 EDM 行銷規劃與分析',
     ],
-  },
-  {
-    period: '廣告與年度策略',
-    icon: <BarChart2 size={16} />,
-    items: [
-      {
-        title: 'Google Ads 自行操作',
-        tags: ['廣告投放', 'B2B', '策略'],
-        highlight: '年省 20% 代操費用',
-        points: [
-          'B2B 產業年度行銷策略擬定，操作七位數廣告預算',
-          '由代操公司轉為自行操作，每年節省 20% 代操費',
-          '台灣 B2B 市場：Search CTR 13.84%，轉換率 56.61%',
-          '美國 B2B 市場：CTR 4.64%，轉換率 25%',
-          'LinkedIn 廣告投放，CTR 1.24%',
-          '年度展覽企劃：台北國際自動化展、半導體展、工具機展、木工機械展',
-          '展前展中展後網路及媒體行銷，EDM 行銷規劃與分析',
-          '電子化邀請卡、QR Code 電子型錄製作',
-        ],
-      },
-    ],
-  },
-  {
-    period: '電商與通路',
-    icon: <ShoppingCart size={16} />,
-    items: [
-      {
-        title: '多平台電商經營',
-        tags: ['電商', '跨境', 'Amazon'],
-        points: [
-          '台灣經貿網：建立產品資訊，增加 14 個語系做跨境貿易',
-          '建立虛擬展間，參與線上採購洽談會',
-          'Amazon 北美站從零開始，產品上架優化',
-          'PChome 商店街、Yahoo 商城、蝦皮、91APP、Shopline',
-        ],
-      },
-    ],
-  },
-  {
-    period: '社群與影音',
-    icon: <Play size={16} />,
-    items: [
-      {
-        title: '社群經營與影音製作',
-        tags: ['社群', 'YouTube', '內容行銷'],
-        points: [
-          'Facebook、Twitter、LinkedIn 最新消息及活動分享',
-          'YouTube 影片腳本設計、拍攝剪接、字幕、SEO 優化',
-          '影片帶來廠商詢價，驗證影音內容的 B2B 轉換效益',
-        ],
-      },
-    ],
-  },
-  {
-    period: '管理與其他',
-    icon: <Users size={16} />,
-    items: [
-      {
-        title: '行銷團隊管理',
-        tags: ['管理', '策略'],
-        points: [
-          '管理過 3 名行銷員工，規劃全年度行銷活動與展覽行程',
-          '主力 SEO 自然排序曝光，多面向品牌曝光策略',
-          '市場產業分析與競業調查',
-          '商標設計與申請，已取得台灣、美國、中國商標權',
-        ],
-      },
-    ],
+    result: '建立完整線上銷售通路，提升品牌在國際採購平台的曝光',
+    metric: '5+ 平台 · B2B+B2C',
+    color: 'from-[#C084FC] to-[#93C5FD]',
   },
 ]
 
-const stats = [
-  { value: '15', unit: '年', label: '跨領域工作' },
-  { value: '850', unit: '%', label: '年度流量提升' },
-  { value: '60', unit: '+', label: '海外詢問增加' },
-  { value: '7', unit: '位數', label: '廣告預算' },
-  { value: '3', unit: '名', label: '團隊管理' },
-  { value: '5', unit: '項', label: '年度專案' },
+const expos = [
+  '台北國際自動化展',
+  '半導體展',
+  '國際醫療展',
+  '工具機展',
+  '木工機械展',
 ]
 
 export default function ExperiencePage() {
@@ -188,29 +96,28 @@ export default function ExperiencePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-indigo-50 text-brand-indigo">
-              Experience
+              Results
             </span>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">職涯與實戰</span>
+              <span className="gradient-text">成果案例</span>
             </h1>
             <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-              15 年跨領域工作經驗，每段歷程都在強化對品牌行銷的理解與執行深度。
+              數字說明一切。這不是估算，而是我真實執行的結果。
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-surface py-12">
+      {/* Big Numbers */}
+      <section className="py-14 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-            {stats.map((s, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {bigNumbers.map((n, i) => (
               <AnimatedCard key={i} delay={i * 0.06}>
-                <div className="bg-white rounded-2xl p-4 text-center shadow-sm">
-                  <div className="font-heading text-2xl sm:text-3xl font-bold text-gray-900">
-                    {s.value}<span className="text-brand-purple text-base sm:text-lg">{s.unit}</span>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-1">{s.label}</p>
+                <div className="bg-white rounded-2xl p-5 text-center shadow-sm">
+                  <div className={`font-heading text-2xl sm:text-3xl font-bold ${n.color} leading-none mb-1`}>{n.value}</div>
+                  <div className="text-xs font-semibold text-gray-800 mt-2 leading-snug">{n.label}</div>
+                  <div className="text-xs text-gray-400 mt-1 leading-snug">{n.sub}</div>
                 </div>
               </AnimatedCard>
             ))}
@@ -218,61 +125,117 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
-            {timeline.map((period, pi) => (
-              <ScrollReveal key={pi} delay={pi * 0.05}>
-                <div>
-                  {/* Period header */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white shrink-0">
-                      {period.icon}
+      {/* Case Studies */}
+      <section className="py-14 lg:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+              怎麼做到的？
+            </h2>
+            <p className="text-gray-500 mb-10">每個數字背後的問題、做法與結果</p>
+          </ScrollReveal>
+
+          <div className="space-y-6">
+            {cases.map((c, i) => (
+              <AnimatedCard key={i} delay={i * 0.07} hoverLift>
+                <div className="bg-surface rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  {/* Header */}
+                  <div className={`bg-gradient-to-r ${c.color} px-7 py-5 flex items-center justify-between`}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white">
+                        {c.icon}
+                      </div>
+                      <span className="font-heading font-bold text-white">{c.tag}</span>
                     </div>
-                    <h2 className="font-heading font-bold text-lg text-gray-900">{period.period}</h2>
+                    <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-bold">
+                      {c.metric}
+                    </span>
                   </div>
 
-                  {/* Items */}
-                  <div className="space-y-4 ml-12">
-                    {period.items.map((item, ii) => (
-                      <AnimatedCard key={ii} delay={0.05 + ii * 0.06} hoverLift>
-                        <div className="bg-surface rounded-2xl p-6 border border-gray-100">
-                          <div className="flex flex-col sm:flex-row sm:items-start gap-3 mb-4">
-                            <div className="flex-1">
-                              <h3 className="font-heading font-bold text-gray-900 text-base">{item.title}</h3>
-                              {'highlight' in item && item.highlight && (
-                                <span className="inline-block mt-1.5 px-3 py-0.5 rounded-full text-xs font-semibold gradient-bg text-white">
-                                  {item.highlight}
-                                </span>
-                              )}
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {item.tags.map((tag) => (
-                                <span key={tag} className="px-2.5 py-0.5 rounded-full bg-purple-50 text-brand-purple text-xs font-medium">
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                          <ul className="space-y-2">
-                            {item.points.map((pt, pti) => (
-                              <li key={pti} className="flex items-start gap-2.5 text-sm text-gray-600">
-                                <span className="w-1.5 h-1.5 rounded-full bg-brand-violet mt-1.5 shrink-0" />
-                                {pt}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </AnimatedCard>
-                    ))}
+                  {/* Body: 3 columns */}
+                  <div className="p-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">問題</p>
+                      <p className="text-gray-700 text-sm leading-relaxed italic">&ldquo;{c.problem}&rdquo;</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-brand-indigo uppercase tracking-wider mb-2">做法</p>
+                      <ul className="space-y-1.5">
+                        {c.approach.map((a, ai) => (
+                          <li key={ai} className="flex items-start gap-2 text-xs text-gray-600">
+                            <CheckCircle size={11} className="text-brand-purple mt-0.5 shrink-0" />
+                            {a}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-green-500 uppercase tracking-wider mb-2">結果</p>
+                      <p className="text-gray-700 text-sm leading-relaxed">{c.result}</p>
+                    </div>
                   </div>
                 </div>
-              </ScrollReveal>
+              </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Expos */}
+      <section className="py-12 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <h2 className="font-heading font-bold text-xl text-gray-900 mb-2">展覽行銷企劃執行</h2>
+            <p className="text-gray-500 text-sm mb-6">展前、展中、展後的完整行銷規劃</p>
+            <div className="flex flex-wrap gap-3">
+              {expos.map((expo) => (
+                <span key={expo} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">
+                  🏛 {expo}
+                </span>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Team + Brand */}
+      <section className="py-14 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="gradient-bg rounded-2xl p-7 text-white">
+                <h3 className="font-heading font-bold text-xl mb-3">管理經驗</h3>
+                <p className="text-white/80 text-sm leading-relaxed mb-4">
+                  管理過 3 名行銷員工，規劃全年度行銷活動與展覽行程，跨部門協作業務與外部廠商。
+                </p>
+                <div className="text-3xl font-heading font-bold">3 名行銷人員</div>
+              </div>
+              <div className="bg-surface rounded-2xl p-7">
+                <h3 className="font-heading font-bold text-xl text-gray-900 mb-3">商標保護</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  完成品牌商標設計與申請，建立品牌知識產權保護。
+                </p>
+                <div className="flex gap-3">
+                  {['🇹🇼 台灣', '🇺🇸 美國', '🇨🇳 中國'].map((c) => (
+                    <span key={c} className="px-3 py-1.5 bg-white rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <PageCTA
+        title="我也想要這樣的成果"
+        subtitle="告訴我你現在的瓶頸，讓我們找到突破點。"
+        primaryLabel="填寫合作需求"
+        secondaryLabel="加 LINE 諮詢"
+        secondaryHref="https://lin.ee/Th8VXd1"
+      />
     </div>
   )
 }
