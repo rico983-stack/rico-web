@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   ArrowRight, TrendingUp, Search, MousePointerClick, Palette,
@@ -83,56 +84,84 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#C084FC] via-[#818CF8] to-[#93C5FD] opacity-[0.11] blur-[110px] pointer-events-none animate-pulse-glow" />
         <div className="absolute bottom-10 left-[-80px] w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#93C5FD] to-[#C084FC] opacity-[0.09] blur-[90px] pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <motion.div {...a(0)} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-violet/30 bg-purple-50 text-xs text-brand-purple font-semibold mb-7 tracking-wide">
-              SEO · Google Ads · 網站轉換設計 · 長期合作
-            </motion.div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-            {/* Headline */}
-            <motion.h1 {...a(0.1)} className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
-              我幫創業者打造<br />
-              <span className="gradient-text">能帶來客戶</span>的<br />
-              行銷系統
-            </motion.h1>
+            {/* ── LEFT: Text ── */}
+            <div>
+              {/* Badge */}
+              <motion.div {...a(0)} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-violet/30 bg-purple-50 text-xs text-brand-purple font-semibold mb-7 tracking-wide">
+                SEO · Google Ads · 網站轉換設計 · 長期合作
+              </motion.div>
 
-            {/* Sub */}
-            <motion.p {...a(0.22)} className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-xl">
-              不只做設計 — 讓 SEO、廣告與網站設計整合運作，<br className="hidden sm:block" />
-              把流量真正變成詢問與長期客戶。
-            </motion.p>
+              {/* Headline */}
+              <motion.h1 {...a(0.1)} className="font-heading text-5xl sm:text-6xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
+                我幫創業者打造<br />
+                <span className="gradient-text">能帶來客戶</span>的<br />
+                行銷系統
+              </motion.h1>
 
-            {/* CTA */}
-            <motion.div {...a(0.34)} className="flex flex-wrap gap-3">
-              <Link
-                href="/project-inquiry"
-                className="inline-flex items-center gap-2 px-7 py-3.5 gradient-bg text-white font-bold rounded-full hover:opacity-90 hover:shadow-xl hover:shadow-purple-200 hover:-translate-y-0.5 transition-all duration-200 text-sm"
-              >
-                查看服務方案
-                <ArrowRight size={15} />
-              </Link>
-              <a
-                href="https://lin.ee/Th8VXd1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-brand-purple hover:text-brand-purple transition-all duration-200 text-sm"
-              >
-                <MessageCircle size={15} />
-                免費諮詢 30 分鐘
-              </a>
-            </motion.div>
-          </div>
+              {/* Sub */}
+              <motion.p {...a(0.22)} className="text-lg text-gray-500 leading-relaxed mb-10 max-w-lg">
+                不只做設計 — 讓 SEO、廣告與網站設計整合運作，
+                把流量真正變成詢問與長期客戶。
+              </motion.p>
 
-          {/* Results strip */}
-          <motion.div {...a(0.5)} className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-3xl">
-            {results.map((r, i) => (
-              <div key={i} className="flex flex-col">
-                <span className="font-heading text-3xl sm:text-4xl font-bold gradient-text leading-none">{r.value}</span>
-                <span className="text-xs text-gray-400 mt-1.5 leading-snug">{r.label}</span>
+              {/* CTA */}
+              <motion.div {...a(0.34)} className="flex flex-wrap gap-3 mb-14">
+                <Link
+                  href="/project-inquiry"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 gradient-bg text-white font-bold rounded-full hover:opacity-90 hover:shadow-xl hover:shadow-purple-200 hover:-translate-y-0.5 transition-all duration-200 text-sm"
+                >
+                  查看服務方案
+                  <ArrowRight size={15} />
+                </Link>
+                <a
+                  href="https://lin.ee/Th8VXd1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-brand-purple hover:text-brand-purple transition-all duration-200 text-sm"
+                >
+                  <MessageCircle size={15} />
+                  免費諮詢 30 分鐘
+                </a>
+              </motion.div>
+
+              {/* Results strip */}
+              <motion.div {...a(0.5)} className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-5">
+                {results.map((r, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="font-heading text-3xl font-bold gradient-text leading-none">{r.value}</span>
+                    <span className="text-xs text-gray-400 mt-1.5 leading-snug">{r.label}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* ── RIGHT: Photo ── */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative hidden lg:flex justify-center items-end"
+            >
+              {/* Glow behind photo */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px] rounded-full bg-gradient-to-t from-[#C084FC] via-[#818CF8] to-transparent opacity-20 blur-3xl pointer-events-none" />
+
+              {/* Photo */}
+              <div className="relative z-10">
+                <Image
+                  src="/me.png"
+                  alt="Rico Lin"
+                  width={480}
+                  height={640}
+                  className="object-contain object-bottom max-h-[580px] w-auto drop-shadow-2xl"
+                  priority
+                />
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+
+          </div>
         </div>
 
         {/* Scroll cue */}
