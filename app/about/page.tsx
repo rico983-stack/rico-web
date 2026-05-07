@@ -36,10 +36,34 @@ const experiences = [
 ]
 
 const personal = [
-  { emoji: '🏺', title: '拉胚 4 年', desc: '在旋轉的陶土上找到靜心的節奏，持續進行中。' },
-  { emoji: '☕', title: '烘豆 × 手沖', desc: '從生豆到一杯咖啡，享受過程中的控制感。' },
-  { emoji: '🪘', title: '頌缽療癒', desc: '每週以志工身份服務弱勢長者與精障者，也提供個人預約。' },
-  { emoji: '🥬', title: '逛菜市場', desc: '喜歡自己採買食材，感受生活最原始的節奏。' },
+  {
+    emoji: '🏺',
+    title: '拉胚 4 年',
+    desc: '在旋轉的陶土上找到靜心的節奏，持續進行中。',
+    img: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop&q=80',
+    imgAlt: 'pottery throwing on wheel',
+  },
+  {
+    emoji: '☕',
+    title: '烘豆 × 手沖',
+    desc: '從生豆到一杯咖啡，享受過程中的控制感。',
+    img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&auto=format&fit=crop&q=80',
+    imgAlt: 'pour over coffee brewing',
+  },
+  {
+    emoji: '🪘',
+    title: '頌缽療癒',
+    desc: '每週以志工身份服務弱勢長者與精障者，也提供個人預約。',
+    img: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=400&auto=format&fit=crop&q=80',
+    imgAlt: 'singing bowl meditation',
+  },
+  {
+    emoji: '🥬',
+    title: '逛菜市場',
+    desc: '喜歡自己採買食材，感受生活最原始的節奏。',
+    img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&auto=format&fit=crop&q=80',
+    imgAlt: 'fresh produce at market',
+  },
 ]
 
 export default function AboutPage() {
@@ -178,10 +202,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {personal.map((p, i) => (
               <AnimatedCard key={i} delay={i * 0.07} hoverLift>
-                <div className="bg-white rounded-2xl p-5 text-center h-full shadow-sm hover:shadow-md transition-shadow">
-                  <div className="text-3xl mb-3">{p.emoji}</div>
-                  <div className="font-heading font-bold text-gray-900 text-sm mb-1.5">{p.title}</div>
-                  <p className="text-xs text-gray-500 leading-relaxed">{p.desc}</p>
+                <div className="bg-white rounded-2xl overflow-hidden h-full shadow-sm hover:shadow-md transition-shadow">
+                  <div className="relative h-36 overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.imgAlt}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <span className="absolute bottom-2 left-3 text-2xl drop-shadow-lg">{p.emoji}</span>
+                  </div>
+                  <div className="p-4">
+                    <div className="font-heading font-bold text-gray-900 text-sm mb-1.5">{p.title}</div>
+                    <p className="text-xs text-gray-500 leading-relaxed">{p.desc}</p>
+                  </div>
                 </div>
               </AnimatedCard>
             ))}

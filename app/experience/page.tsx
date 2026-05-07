@@ -155,7 +155,7 @@ export default function ExperiencePage() {
                   {/* Body: 3 columns */}
                   <div className="p-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div>
-                      <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">問題</p>
+                      <p className="text-xs font-bold text-brand-purple uppercase tracking-wider mb-2">問題</p>
                       <p className="text-gray-700 text-sm leading-relaxed italic">&ldquo;{c.problem}&rdquo;</p>
                     </div>
                     <div>
