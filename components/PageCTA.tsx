@@ -21,7 +21,7 @@ export default function PageCTA({
   light = false,
 }: PageCTAProps) {
   return (
-    <section className={`py-20 lg:py-24 ${light ? 'bg-white' : 'gradient-bg'}`}>
+    <section className={`py-14 sm:py-20 lg:py-24 ${light ? 'bg-white' : 'gradient-bg'}`}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className={`font-heading text-3xl sm:text-4xl font-bold mb-3 ${light ? 'text-gray-900' : 'text-white'}`}>
           {title}
@@ -32,7 +32,7 @@ export default function PageCTA({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href={primaryHref}
-            className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 ${
+            className={`inline-flex w-full sm:w-auto min-h-12 justify-center items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 ${
               light
                 ? 'gradient-bg text-white hover:shadow-lg hover:shadow-purple-200'
                 : 'bg-white text-brand-purple hover:shadow-lg hover:shadow-black/10'
@@ -45,7 +45,7 @@ export default function PageCTA({
             href={secondaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 ${
+            className={`inline-flex w-full sm:w-auto min-h-12 justify-center items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 ${
               light
                 ? 'border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white'
                 : 'border-2 border-white/40 text-white hover:border-white hover:bg-white/10'

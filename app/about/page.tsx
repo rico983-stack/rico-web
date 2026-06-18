@@ -70,30 +70,30 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-white py-14 sm:py-20 lg:py-24">
         <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-gradient-to-bl from-[#C084FC] to-[#93C5FD] opacity-[0.09] blur-[80px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-purple-50 text-brand-purple">
               About
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">關於我</span>
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              <span className="gradient-text">關於瑞虎商行</span>
             </h1>
             <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-              Rico Lin — 行銷接案者，也是一個有溫度的人。
+              從策略到執行，把網站、搜尋與廣告整合成能持續成長的系統。
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-14 lg:py-20 bg-surface">
+      <section className="py-12 sm:py-14 lg:py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Left: Story */}
             <ScrollReveal direction="left" className="lg:col-span-3">
-              <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm h-full">
+              <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm h-full">
                 <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-5 px-3 py-1 rounded-full bg-purple-50 text-brand-purple">
                   My Story
                 </span>

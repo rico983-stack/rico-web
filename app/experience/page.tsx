@@ -91,25 +91,25 @@ export default function ExperiencePage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-white py-14 sm:py-20 lg:py-24">
         <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-gradient-to-bl from-[#818CF8] to-[#93C5FD] opacity-[0.1] blur-[80px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-indigo-50 text-brand-indigo">
               Results
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">成果案例</span>
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              <span className="gradient-text">從問題到成果</span>
             </h1>
             <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-              數字說明一切。這不是估算，而是我真實執行的結果。
+              先看成果，再看瑞虎商行如何拆解問題、執行策略與驗證成效。
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Big Numbers */}
-      <section className="py-14 bg-surface">
+      <section className="py-10 sm:py-14 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {bigNumbers.map((n, i) => (

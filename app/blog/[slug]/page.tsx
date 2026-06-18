@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: '文章不存在 | Rico Lin',
+      title: '文章不存在｜瑞虎商行',
     }
   }
 
@@ -69,11 +69,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     dateModified: modifiedDate,
     author: {
       '@type': 'Person',
-      name: 'Rico Lin',
+      name: '瑞虎商行',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Rico Lin',
+      name: '瑞虎商行',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -134,8 +134,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       ))}
 
-      <section className="bg-white py-14 lg:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-10 sm:py-14 lg:py-20">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-brand-purple mb-8">
             <ArrowLeft size={15} />
             回到 Blog
@@ -149,11 +149,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.service_category && <span className="px-2.5 py-1 rounded-full bg-purple-50 text-brand-purple">{post.service_category}</span>}
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-5">
+          <h1 className="font-heading text-3xl sm:text-5xl font-bold text-gray-900 leading-[1.2] mb-5 tracking-tight text-pretty">
             {post.title}
           </h1>
 
-          {post.excerpt && <p className="text-lg text-gray-500 leading-relaxed mb-8">{post.excerpt}</p>}
+          {post.excerpt && <p className="text-base sm:text-lg text-gray-600 leading-8 mb-8 border-l-2 border-brand-violet pl-4">{post.excerpt}</p>}
 
           {post.cover_image_url && (
             <div className="aspect-[1200/630] rounded-2xl overflow-hidden bg-gray-100 mb-10">
@@ -161,8 +161,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
 
-          <div className="prose prose-gray max-w-none">
-            <div className="whitespace-pre-wrap text-gray-700 leading-8">{post.content}</div>
+          <div className="max-w-[68ch] mx-auto">
+            <div className="whitespace-pre-wrap text-[17px] text-gray-700 leading-[1.95] break-words">{post.content}</div>
           </div>
 
           {faqItems.length > 0 && (

@@ -148,7 +148,7 @@ function BusinessCardMockup() {
         <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#C084FC] to-[#818CF8]" />
         <div className="pl-4 pt-3 pr-3 pb-3 h-full flex flex-col justify-between">
           <div>
-            <div className="font-bold text-gray-800 text-xs">Rico Lin</div>
+            <div className="font-bold text-gray-800 text-xs">瑞虎商行</div>
             <div className="text-[9px] text-brand-purple font-medium mt-0.5">Brand & Marketing</div>
           </div>
           <div className="space-y-0.5">
@@ -359,18 +359,18 @@ export default function ServicesPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-white py-14 sm:py-20 lg:py-24">
         <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-gradient-to-bl from-[#7C3AED] to-[#93C5FD] opacity-[0.08] blur-[80px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-purple-50 text-brand-purple">
               Services
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               <span className="gradient-text">服務方案</span>
             </h1>
             <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-              不是賣技能，是幫你帶來客戶。每個服務都圍繞一個核心目標：讓你的品牌被找到、被信任、被詢問。
+              從「被找到」到「產生詢問」，依你的現況選擇最需要的成長環節。
             </p>
           </ScrollReveal>
         </div>

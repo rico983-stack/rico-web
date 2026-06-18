@@ -1,8 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/services', label: '服務' },
@@ -36,20 +37,20 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || mobileOpen
-          ? 'bg-white/96 backdrop-blur-md shadow-sm border-b border-gray-100'
-          : 'bg-transparent'
+          ? 'bg-gray-950/95 backdrop-blur-md shadow-lg border-b border-white/10'
+          : 'bg-gray-950'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <span className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <Sparkles size={14} className="text-white" />
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="瑞虎商行首頁">
+            <span className="relative w-10 h-10 overflow-hidden shrink-0" aria-hidden="true">
+              <Image src="/rei-hoo-logo.png" alt="" width={1920} height={1080} priority className="absolute left-1/2 top-1/2 w-[360px] max-w-none -translate-x-1/2 -translate-y-1/2" />
             </span>
-            <span className="font-heading font-bold text-lg gradient-text-purple">
-              Rico Lin
+            <span className="font-heading font-bold text-base sm:text-lg tracking-wide text-white">
+              瑞虎商行
             </span>
           </Link>
 
@@ -61,15 +62,15 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.href)
-                    ? 'text-brand-purple bg-purple-50'
-                    : 'text-gray-600 hover:text-brand-purple hover:bg-gray-50'
+                    ? 'text-white bg-white/12'
+                    : 'text-gray-300 hover:text-white hover:bg-white/8'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
 
-            <div className="w-px h-4 bg-gray-200 mx-2" />
+            <div className="w-px h-4 bg-white/20 mx-2" />
 
             <Link
               href="/project-inquiry"
@@ -82,8 +83,8 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-brand-purple hover:bg-gray-50 transition-colors"
-            aria-label="Toggle menu"
+            className="lg:hidden min-w-11 min-h-11 p-2 rounded-lg text-gray-200 hover:text-white hover:bg-white/10 transition-colors"
+            aria-label={mobileOpen ? '關閉選單' : '開啟選單'}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -91,15 +92,15 @@ export default function Navbar() {
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100 space-y-1">
+          <div className="lg:hidden py-3 border-t border-white/10 space-y-1 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive(link.href)
-                    ? 'text-brand-purple bg-purple-50'
-                    : 'text-gray-700 hover:text-brand-purple hover:bg-gray-50'
+                    ? 'text-white bg-white/12'
+                    : 'text-gray-200 hover:text-white hover:bg-white/8'
                 }`}
               >
                 {link.label}

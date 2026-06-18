@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Mail, MessageCircle, Globe, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, MessageCircle, Globe } from 'lucide-react'
 
 const footerLinks = [
   {
@@ -31,11 +32,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                <Sparkles size={14} className="text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <span className="relative w-12 h-12 overflow-hidden shrink-0" aria-hidden="true">
+                <Image src="/rei-hoo-logo.png" alt="" width={1920} height={1080} className="absolute left-1/2 top-1/2 w-[430px] max-w-none -translate-x-1/2 -translate-y-1/2" />
               </span>
-              <span className="font-heading font-bold text-lg gradient-text">Rico Lin</span>
+              <span className="font-heading font-bold text-xl text-white tracking-wide">瑞虎商行</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-2 max-w-xs">
               行銷導向的個人品牌接案者
@@ -98,7 +99,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Rico Lin. All rights reserved.
+            © {new Date().getFullYear()} 瑞虎商行. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
             SEO · Google Ads · 網站轉換 · 頌缽療癒 · 台北

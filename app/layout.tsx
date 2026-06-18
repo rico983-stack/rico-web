@@ -19,13 +19,15 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL('https://rico-web.vercel.app'),
   title: {
-    default: 'Rico｜網站、SEO 與廣告整合顧問',
-    template: '%s | Rico Lin',
+    default: '瑞虎商行｜網站、SEO 與廣告整合顧問',
+    template: '%s｜瑞虎商行',
   },
   description:
     '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
-  keywords: ['Rico Lin', '網站規劃', 'SEO', 'GEO', 'Google Ads', '中小企業行銷', '品牌網站', '網站轉換率優化', '台灣接案顧問'],
-  authors: [{ name: 'Rico Lin' }],
+  keywords: ['瑞虎商行', '網站規劃', 'SEO', 'GEO', 'Google Ads', '中小企業行銷', '品牌網站', '網站轉換率優化', '台灣接案顧問'],
+  authors: [{ name: '瑞虎商行' }],
+  creator: '瑞虎商行',
+  publisher: '瑞虎商行',
   alternates: {
     canonical: '/',
   },
@@ -41,14 +43,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Rico｜網站、SEO 與廣告整合顧問',
+    title: '瑞虎商行｜網站、SEO 與廣告整合顧問',
     description: '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
     type: 'website',
     locale: 'zh_TW',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rico｜網站、SEO 與廣告整合顧問',
+    title: '瑞虎商行｜網站、SEO 與廣告整合顧問',
     description: '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
   },
 }

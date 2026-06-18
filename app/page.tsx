@@ -151,7 +151,7 @@ export default function HomePage() {
               <div className="relative z-10 w-full flex justify-center">
                 <img
                   src="/me.png"
-                  alt="Rico Lin"
+                  alt="瑞虎商行主理人"
                   className="max-h-[560px] w-auto object-contain object-bottom drop-shadow-2xl"
                 />
               </div>

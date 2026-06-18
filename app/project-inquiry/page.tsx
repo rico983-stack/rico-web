@@ -94,32 +94,32 @@ export default function ProjectInquiryPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="relative overflow-hidden gradient-bg py-20 lg:py-28">
+      <section className="relative overflow-hidden gradient-bg py-14 sm:py-20 lg:py-24">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-white opacity-[0.05] blur-[80px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-white/20 text-white">
               Start Here
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              開始合作
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              先說目標，再一起找解法
             </h1>
             <p className="text-white/75 text-lg max-w-xl leading-relaxed mb-7">
               告訴我你的目標。不管是 SEO、廣告投放、還是網站優化，我幫你找到最有效的切入點。
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="https://lin.ee/Th8VXd1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-purple font-bold rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm"
+                className="inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 bg-white text-brand-purple font-bold rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm"
               >
                 <MessageCircle size={15} />
                 先加 LINE 聊聊
               </a>
               <a
                 href="mailto:reihoo75@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-full hover:border-white hover:bg-white/10 transition-all text-sm"
+                className="inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-full hover:border-white hover:bg-white/10 transition-all text-sm"
               >
                 寄 Email
               </a>
@@ -135,7 +135,7 @@ export default function ProjectInquiryPage() {
 
             {/* Why me */}
             <ScrollReveal direction="left">
-              <div className="bg-white rounded-3xl p-8 shadow-sm h-full">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm h-full">
                 <h2 className="font-heading font-bold text-xl text-gray-900 mb-5">為什麼找我？</h2>
                 <ul className="space-y-3">
                   {whyMe.map((item, i) => (
@@ -150,7 +150,7 @@ export default function ProjectInquiryPage() {
 
             {/* Process */}
             <ScrollReveal direction="right">
-              <div className="bg-white rounded-3xl p-8 shadow-sm h-full">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm h-full">
                 <div className="flex items-center gap-3 mb-5">
                   <Clock size={20} className="text-brand-purple" />
                   <h2 className="font-heading font-bold text-xl text-gray-900">合作流程</h2>

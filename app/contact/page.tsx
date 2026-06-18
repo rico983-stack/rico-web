@@ -31,7 +31,7 @@ const contactMethods = [
   {
     icon: <Globe size={22} />,
     title: 'LinkedIn',
-    value: 'Rico Lin',
+    value: '瑞虎商行',
     desc: '職涯背景、B2B 合作、專業交流，歡迎連結。',
     href: 'https://www.linkedin.com/in/rico1986/',
     color: 'from-[#818CF8] to-[#93C5FD]',
