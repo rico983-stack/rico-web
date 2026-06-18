@@ -8,6 +8,7 @@ const footerLinks = [
       { href: '/services', label: '服務方案' },
       { href: '/project-inquiry', label: '開始合作' },
       { href: '/experience', label: '成果案例' },
+      { href: '/blog', label: 'Blog' },
       { href: '/healing-booking', label: '療癒預約' },
     ],
   },

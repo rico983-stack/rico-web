@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, Sparkles } from 'lucide-react'
 
 const navLinks = [
-  { href: '/services', label: '服務方案' },
-  { href: '/experience', label: '成果案例' },
-  { href: '/about', label: '關於我' },
-  { href: '/healing-booking', label: '療癒預約' },
+  { href: '/services', label: '服務' },
+  { href: '/experience', label: '案例' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: '關於' },
 ]
 
 export default function Navbar() {

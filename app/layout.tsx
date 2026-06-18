@@ -17,19 +17,39 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rico-web.vercel.app'),
   title: {
-    default: 'Rico Lin | 品牌設計 × 數位行銷 × 療癒預約',
+    default: 'Rico｜網站、SEO 與廣告整合顧問',
     template: '%s | Rico Lin',
   },
   description:
-    '我結合設計、行銷、SEO 與內容策略，打造兼具美感與轉換力的品牌表現。15年跨領域工作經驗，橫跨設計、影像、電商、B2B行銷與療癒服務。',
-  keywords: ['Rico Lin', '品牌設計', '數位行銷', 'SEO', 'Google Ads', '療癒預約', '頌缽', 'WordPress'],
+    '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
+  keywords: ['Rico Lin', '網站規劃', 'SEO', 'GEO', 'Google Ads', '中小企業行銷', '品牌網站', '網站轉換率優化', '台灣接案顧問'],
   authors: [{ name: 'Rico Lin' }],
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: 'Rico Lin | 品牌設計 × 數位行銷 × 療癒預約',
-    description: '我結合設計、行銷、SEO 與內容策略，打造兼具美感與轉換力的品牌表現。',
+    title: 'Rico｜網站、SEO 與廣告整合顧問',
+    description: '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
     type: 'website',
     locale: 'zh_TW',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rico｜網站、SEO 與廣告整合顧問',
+    description: '協助台灣中小品牌整理網站、SEO、GEO 與 Google Ads，打造能帶來詢問的接案與行銷系統。',
   },
 }
 
