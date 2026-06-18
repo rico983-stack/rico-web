@@ -19,16 +19,17 @@ export default async function BlogPage() {
 
   return (
     <div className="pt-16">
-      <section className="bg-white py-14 sm:py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-white py-14 sm:py-20 lg:py-24">
+        <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full bg-gradient-to-bl from-[#C084FC] to-[#93C5FD] opacity-[0.1] blur-[80px] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-purple-50 text-brand-purple">
-            Blog
+            Insights
           </span>
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
-            瑞虎觀點｜網站與行銷實戰筆記
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+            <span className="gradient-text">網站與行銷實戰筆記</span>
           </h1>
-          <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
-            分享網站轉換、SEO、廣告與台灣中小品牌行銷整理的實務觀察。
+          <p className="text-base sm:text-lg text-gray-500 max-w-xl leading-relaxed">
+            整理網站轉換、SEO、廣告與品牌經營的實務方法，讓每一篇都能成為下一步的參考。
           </p>
         </div>
       </section>
@@ -46,10 +47,10 @@ export default async function BlogPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {posts.map((post) => (
-                <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <article key={post.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-purple-100/60 hover:-translate-y-1 transition-all duration-300">
                   {post.cover_image_url && (
                     <Link href={`/blog/${post.slug}`} className="block aspect-[1200/630] overflow-hidden bg-gray-100">
-                      <img src={post.cover_image_url} alt={post.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                      <img src={post.cover_image_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </Link>
                   )}
                   <div className="p-5 sm:p-6">

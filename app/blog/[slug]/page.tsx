@@ -134,8 +134,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       ))}
 
-      <section className="bg-white py-10 sm:py-14 lg:py-20">
-        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-white py-10 sm:py-14 lg:py-20">
+        <div className="absolute top-0 right-0 w-[480px] h-[360px] rounded-full bg-gradient-to-bl from-[#C084FC] to-[#93C5FD] opacity-[0.08] blur-[80px] pointer-events-none" />
+        <div className="relative max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-brand-purple mb-8">
             <ArrowLeft size={15} />
             回到 Blog
@@ -156,7 +157,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {post.excerpt && <p className="text-base sm:text-lg text-gray-600 leading-8 mb-8 border-l-2 border-brand-violet pl-4">{post.excerpt}</p>}
 
           {post.cover_image_url && (
-            <div className="aspect-[1200/630] rounded-2xl overflow-hidden bg-gray-100 mb-10">
+            <div className="aspect-[1200/630] rounded-3xl overflow-hidden bg-gray-100 mb-10 shadow-lg shadow-purple-100/50">
               <img src={post.cover_image_url} alt={post.title} className="w-full h-full object-cover" />
             </div>
           )}
@@ -170,7 +171,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <h2 className="font-heading text-2xl font-bold text-gray-900 mb-5">常見問題</h2>
               <div className="space-y-4">
                 {faqItems.map((item) => (
-                  <div key={item.question} className="rounded-2xl bg-surface p-5">
+                  <div key={item.question} className="rounded-2xl bg-surface border border-purple-100/70 p-5">
                     <h3 className="font-heading font-bold text-gray-900 mb-2">{item.question}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{item.answer}</p>
                   </div>
@@ -180,7 +181,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
 
           {post.cta_text && (
-            <section className="mt-12 rounded-2xl gradient-bg p-7 text-white">
+            <section className="mt-12 rounded-3xl gradient-bg p-7 sm:p-9 text-white shadow-lg shadow-purple-200/50">
               <h2 className="font-heading text-2xl font-bold mb-2">想進一步整理你的網站？</h2>
               <p className="text-white/80 leading-relaxed mb-5">{post.cta_text}</p>
               <Link href="/project-inquiry" className="inline-flex px-5 py-3 rounded-full bg-white text-brand-purple text-sm font-bold">
